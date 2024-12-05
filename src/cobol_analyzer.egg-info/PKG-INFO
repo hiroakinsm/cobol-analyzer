@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: cobol-analyzer
+Version: 0.1.0
+Summary: COBOL source code analyzer
+Author: Your Name
+Author-email: your.email@example.com
+Requires-Python: >=3.9
+Requires-Dist: asyncpg
+Requires-Dist: motor
+Requires-Dist: pymilvus
+Requires-Dist: paramiko
+Requires-Dist: python-dotenv
+Requires-Dist: pytest
+Requires-Dist: pytest-asyncio
+Requires-Dist: pydantic
+Requires-Dist: jinja2
+Requires-Dist: python-dateutil
+Requires-Dist: pyyaml
+Requires-Dist: requests
