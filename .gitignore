@@ -12,4 +12,4 @@ __pycache__/
 # その他不要なディレクトリやファイル
 config/
 key_hironsm
-key_hironsm.pub
+key_hironsm.pubvenv/
