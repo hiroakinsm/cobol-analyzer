@@ -1,0 +1,15 @@
+# Python 仮想環境
+venv/
+
+# バイトコードキャッシュ
+__pycache__/
+*.pyc
+*.pyo
+
+# ログファイル
+*.log
+
+# その他不要なディレクトリやファイル
+config/
+key_hironsm
+key_hironsm.pub
