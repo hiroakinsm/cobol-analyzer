@@ -306,3 +306,148 @@ class BenchmarkMasterRepository(MasterRepository[BenchmarkMaster]):
         except Exception as e:
             self.logger.error(f"Failed to get thresholds: {str(e)}")
             raise
+
+class SingleAnalysisMasterRepository(MasterRepository[SingleAnalysisMaster]):
+    """単一解析マスター用リポジトリ"""
+    def __init__(self, connection: PostgresConnectionManager):
+        super().__init__(connection, "single_analysis_master")
+        self.id_column = "analysis_id"
+        self.model_class = SingleAnalysisMaster
+
+    async def get_by_analysis_type(self, analysis_type: str) -> List[SingleAnalysisMaster]:
+        """解析タイプによる取得"""
+        query = QueryBuilder()\
+            .from_table(self.table_name)\
+            .where("analysis_type", "=", analysis_type)\
+            .where("is_active", "=", True)\
+            .order_by("process_type", "ASC")\
+            .build()
+
+        try:
+            rows = await self.connection.fetch(query)
+            return [self.model_class(**row) for row in rows]
+        except Exception as e:
+            self.logger.error(f"Failed to get analysis master by type: {str(e)}")
+            raise
+
+    async def get_parameters(self, analysis_type: str, process_type: str) -> List[Dict[str, Any]]:
+        """パラメータ設定の取得"""
+        query = QueryBuilder()\
+            .select(["parameter_name", "parameter_value", "data_type", "is_required"])\
+            .from_table(self.table_name)\
+            .where("analysis_type", "=", analysis_type)\
+            .where("process_type", "=", process_type)\
+            .where("is_active", "=", True)\
+            .build()
+
+        try:
+            rows = await self.connection.fetch(query)
+            return [dict(row) for row in rows]
+        except Exception as e:
+            self.logger.error(f"Failed to get analysis parameters: {str(e)}")
+            raise
+
+class SummaryAnalysisMasterRepository(MasterRepository[SummaryAnalysisMaster]):
+    """サマリ解析マスター用リポジトリ"""
+    def __init__(self, connection: PostgresConnectionManager):
+        super().__init__(connection, "summary_analysis_master")
+        self.id_column = "summary_id"
+        self.model_class = SummaryAnalysisMaster
+
+    async def get_by_process_type(self, process_type: str) -> List[SummaryAnalysisMaster]:
+        """処理タイプによる取得"""
+        query = QueryBuilder()\
+            .from_table(self.table_name)\
+            .where("process_type", "=", process_type)\
+            .where("is_active", "=", True)\
+            .order_by("parameter_name", "ASC")\
+            .build()
+
+        try:
+            rows = await self.connection.fetch(query)
+            return [self.model_class(**row) for row in rows]
+        except Exception as e:
+            self.logger.error(f"Failed to get summary master by process: {str(e)}")
+            raise
+
+class DashboardMasterRepository(MasterRepository[DashboardMaster]):
+    """ダッシュボードマスター用リポジトリ"""
+    def __init__(self, connection: PostgresConnectionManager):
+        super().__init__(connection, "dashboard_master")
+        self.id_column = "dashboard_id"
+        self.model_class = DashboardMaster
+
+    async def get_layout_config(self, dashboard_type: str) -> List[Dict[str, Any]]:
+        """レイアウト設定の取得"""
+        query = QueryBuilder()\
+            .select(["component_type", "layout_config", "style_config", "display_order"])\
+            .from_table(self.table_name)\
+            .where("dashboard_type", "=", dashboard_type)\
+            .where("is_active", "=", True)\
+            .order_by("display_order", "ASC")\
+            .build()
+
+        try:
+            rows = await self.connection.fetch(query)
+            return [dict(row) for row in rows]
+        except Exception as e:
+            self.logger.error(f"Failed to get dashboard layout: {str(e)}")
+            raise
+
+    async def get_component_config(self, dashboard_type: str, component_type: str) -> Optional[Dict[str, Any]]:
+        """コンポーネント設定の取得"""
+        query = QueryBuilder()\
+            .select(["parameter_name", "parameter_value", "layout_config", "style_config"])\
+            .from_table(self.table_name)\
+            .where("dashboard_type", "=", dashboard_type)\
+            .where("component_type", "=", component_type)\
+            .where("is_active", "=", True)\
+            .build()
+
+        try:
+            row = await self.connection.fetchrow(query)
+            return dict(row) if row else None
+        except Exception as e:
+            self.logger.error(f"Failed to get component config: {str(e)}")
+            raise
+
+class DocumentMasterRepository(MasterRepository[DocumentMaster]):
+    """ドキュメントマスター用リポジトリ"""
+    def __init__(self, connection: PostgresConnectionManager):
+        super().__init__(connection, "document_master")
+        self.id_column = "document_id" 
+        self.model_class = DocumentMaster
+
+    async def get_section_config(self, document_type: str) -> List[Dict[str, Any]]:
+        """セクション設定の取得"""
+        query = QueryBuilder()\
+            .select(["section_type", "parameter_name", "parameter_value", "format_config"])\
+            .from_table(self.table_name)\
+            .where("document_type", "=", document_type)\
+            .where("is_active", "=", True)\
+            .order_by("display_order", "ASC")\
+            .build()
+
+        try:
+            rows = await self.connection.fetch(query)
+            return [dict(row) for row in rows]
+        except Exception as e:
+            self.logger.error(f"Failed to get section config: {str(e)}")
+            raise
+
+    async def get_template_path(self, document_type: str, section_type: str) -> Optional[str]:
+        """テンプレートパスの取得"""
+        query = QueryBuilder()\
+            .select(["template_path"])\
+            .from_table(self.table_name)\
+            .where("document_type", "=", document_type)\
+            .where("section_type", "=", section_type)\
+            .where("is_active", "=", True)\
+            .build()
+
+        try:
+            row = await self.connection.fetchrow(query)
+            return row["template_path"] if row else None
+        except Exception as e:
+            self.logger.error(f"Failed to get template path: {str(e)}")
+            raise
