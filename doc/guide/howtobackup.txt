@@ -1,0 +1,10 @@
+# 初期セットアップ
+sudo ./backup-mount.sh
+
+# マウント状態の確認
+${BACKUP_ROOT}/scripts/check_mount.sh
+
+# バックアップスクリプトは自動的にマウント確認を行います
+${BACKUP_ROOT}/scripts/backup_postgresql.sh full
+${BACKUP_ROOT}/scripts/backup_mongodb.sh full
+${BACKUP_ROOT}/scripts/backup_files.sh

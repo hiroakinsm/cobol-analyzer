@@ -1,0 +1,12 @@
+class_diagram---クラス図が収められたディレクトリ
+db---データベーススキーマが収められたディレクトリ
+dfd---DFD、フローが収められたディレクトリ
+er---ERが収められたディレクトリ
+guide---各種ガイドが収められたディレクトリ
+Processing_and_Output_Requirements---処理および出力要件が収められたディレクトリ
+sample---が収められたディレクトリ
+shell---が収められたディレクトリ
+src---ソースコードが収められたディレクトリ
+SystemConfigurationRequirements---システム構成要件が収められたディレクトリ
+20241213.xlsx---
+RADME.md---このテキスト
