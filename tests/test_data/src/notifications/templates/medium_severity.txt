@@ -1,0 +1,18 @@
+[Warning Notice]
+
+A warning has been detected in the COBOL Analyzer:
+
+Warning Type: {error_type}
+Severity Level: {severity}
+Timestamp: {timestamp}
+
+Warning Details:
+{error_message}
+
+Additional Context:
+{context}
+
+Please review this warning at your earliest convenience.
+
+---
+This is an automated notification from COBOL Analyzer 

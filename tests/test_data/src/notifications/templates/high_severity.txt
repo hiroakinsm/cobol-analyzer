@@ -1,0 +1,18 @@
+[HIGH PRIORITY ERROR ALERT]
+
+A high-severity error has been detected in the COBOL Analyzer:
+
+Error Type: {error_type}
+Severity Level: {severity}
+Timestamp: {timestamp}
+
+Error Details:
+{error_message}
+
+Additional Context:
+{context}
+
+Please investigate this issue immediately.
+
+---
+This is an automated notification from COBOL Analyzer 

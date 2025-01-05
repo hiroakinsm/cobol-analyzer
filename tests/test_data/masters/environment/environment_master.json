@@ -1,0 +1,25 @@
+{
+    "environments": [
+        {
+            "env_id": "mainframe_prod",
+            "env_name": "本番メインフレーム環境",
+            "os_type": "z/OS",
+            "compiler_info": {
+                "name": "Enterprise COBOL",
+                "version": "6.3",
+                "options": {
+                    "CHARSET": "EBCDIC",
+                    "NUMPROC": "NOPFD",
+                    "TRUNC": "STD"
+                }
+            },
+            "character_set": "EBCDIC",
+            "file_system": "hierarchical",
+            "configurations": {
+                "job_control": "JCL",
+                "transaction_monitor": "CICS",
+                "database": "Db2"
+            }
+        }
+    ]
+} 

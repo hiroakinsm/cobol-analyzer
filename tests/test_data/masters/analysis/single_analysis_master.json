@@ -1,0 +1,27 @@
+{
+    "analysis_types": [
+        {
+            "analysis_type": "complexity_analysis",
+            "target_elements": [
+                "PROCEDURE_DIVISION",
+                "SECTIONS",
+                "PARAGRAPHS"
+            ],
+            "analysis_rules": {
+                "cyclomatic_complexity": {
+                    "enabled": true,
+                    "max_value": 20
+                },
+                "nesting_depth": {
+                    "enabled": true,
+                    "max_value": 5
+                }
+            },
+            "output_format": "json",
+            "thresholds": {
+                "warning": 15,
+                "error": 20
+            }
+        }
+    ]
+} 
