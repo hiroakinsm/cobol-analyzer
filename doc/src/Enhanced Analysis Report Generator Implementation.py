@@ -1,3 +1,5 @@
+# /home/administrator/cobol-analyzer/src/documents/enhanced_document_generator.py
+
 from typing import Dict, List, Optional, Any, Union
 from dataclasses import dataclass
 from datetime import datetime

@@ -1,3 +1,5 @@
+# /home/administrator/cobol-analyzer/src/cobol_analyzer/analysis/pipeline/components.py
+
 from typing import Dict, List, Optional, Any, Union, Callable
 from dataclasses import dataclass
 from datetime import datetime, timedelta

@@ -1,0 +1,13 @@
+﻿TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,LOGICAL_NAME,TABLE_TYPE,DESCRIPTION,TAG
+172.16.0.13/cobol_analysis_db,public,analysis_logs,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,analysis_results,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,analysis_sources,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,analysis_tasks,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,benchmark_master,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,dashboard_master,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,document_master,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,environment_master,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,logs,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,metadata,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,single_analysis_master,,BASE TABLE,,
+172.16.0.13/cobol_analysis_db,public,summary_analysis_master,,BASE TABLE,,

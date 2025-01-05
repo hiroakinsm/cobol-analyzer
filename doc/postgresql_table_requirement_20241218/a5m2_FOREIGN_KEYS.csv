@@ -1,0 +1,6 @@
+﻿CONSTRAINT_CATALOG,CONSTRAINT_SCHEMA,CONSTRAINT_NAME,TABLE_SCHEMA,TABLE_NAME,COLUMNS,CARDINARITY,REFERENCED_TABLE_SCHEMA,REFERENCED_TABLE_NAME,REFERENCED_COLUMNS,UPDATE_RULE,DELETE_RULE
+172.16.0.13/cobol_analysis_db,,analysis_logs_source_id_fkey,public,analysis_logs,source_id,,public,analysis_sources,source_id,,
+172.16.0.13/cobol_analysis_db,,analysis_logs_task_id_fkey,public,analysis_logs,task_id,,public,analysis_tasks,task_id,,
+172.16.0.13/cobol_analysis_db,,analysis_results_source_id_fkey,public,analysis_results,source_id,,public,analysis_sources,source_id,,
+172.16.0.13/cobol_analysis_db,,analysis_results_task_id_fkey,public,analysis_results,task_id,,public,analysis_tasks,task_id,,
+172.16.0.13/cobol_analysis_db,,analysis_sources_task_id_fkey,public,analysis_sources,task_id,,public,analysis_tasks,task_id,,

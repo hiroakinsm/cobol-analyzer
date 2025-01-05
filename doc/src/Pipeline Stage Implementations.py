@@ -1,3 +1,5 @@
+# /home/administrator/cobol-analyzer/src/cobol_analyzer/analysis/pipeline/stages/implementation.py
+
 from typing import Dict, Any, Optional
 from abc import ABC, abstractmethod
 import asyncio

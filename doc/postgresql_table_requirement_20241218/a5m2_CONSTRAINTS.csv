@@ -1,0 +1,65 @@
+﻿TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,CONSTRAINT_NAME,CONSTRAINT_TYPE,CONSTRAINT_CONTENTS
+172.16.0.13/cobol_analysis_db,public,analysis_logs,2200_1308150_1_not_null,CHECK,log_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_logs,2200_1308150_4_not_null,CHECK,log_level IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_logs,2200_1308150_5_not_null,CHECK,component IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_logs,2200_1308150_6_not_null,CHECK,message IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_logs,analysis_logs_pkey,PRIMARY KEY,log_id
+172.16.0.13/cobol_analysis_db,public,analysis_results,2200_1308170_1_not_null,CHECK,result_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_results,2200_1308170_4_not_null,CHECK,result_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_results,2200_1308170_5_not_null,CHECK,status IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_results,analysis_results_pkey,PRIMARY KEY,result_id
+172.16.0.13/cobol_analysis_db,public,analysis_sources,2200_1308135_1_not_null,CHECK,source_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_sources,2200_1308135_3_not_null,CHECK,file_path IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_sources,2200_1308135_4_not_null,CHECK,file_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_sources,2200_1308135_5_not_null,CHECK,file_hash IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_sources,2200_1308135_6_not_null,CHECK,file_size IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_sources,analysis_sources_pkey,PRIMARY KEY,source_id
+172.16.0.13/cobol_analysis_db,public,analysis_tasks,2200_1308124_11_not_null,CHECK,created_by IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_tasks,2200_1308124_1_not_null,CHECK,task_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_tasks,2200_1308124_2_not_null,CHECK,source_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_tasks,2200_1308124_3_not_null,CHECK,task_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_tasks,2200_1308124_4_not_null,CHECK,status IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_tasks,2200_1308124_6_not_null,CHECK,source_path IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_tasks,2200_1308124_7_not_null,CHECK,analysis_config IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,analysis_tasks,analysis_tasks_pkey,PRIMARY KEY,task_id
+172.16.0.13/cobol_analysis_db,public,benchmark_master,2200_1308110_1_not_null,CHECK,benchmark_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,benchmark_master,2200_1308110_2_not_null,CHECK,category IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,benchmark_master,2200_1308110_3_not_null,CHECK,sub_category IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,benchmark_master,2200_1308110_4_not_null,CHECK,metric_name IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,benchmark_master,benchmark_master_pkey,PRIMARY KEY,benchmark_id
+172.16.0.13/cobol_analysis_db,public,benchmark_master,benchmark_master_category_sub_category_metric_name_key,UNIQUE,"category,sub_category,metric_name"
+172.16.0.13/cobol_analysis_db,public,dashboard_master,2200_1308081_1_not_null,CHECK,dashboard_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,dashboard_master,2200_1308081_2_not_null,CHECK,dashboard_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,dashboard_master,2200_1308081_3_not_null,CHECK,component_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,dashboard_master,2200_1308081_4_not_null,CHECK,parameter_name IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,dashboard_master,dashboard_master_pkey,PRIMARY KEY,dashboard_id
+172.16.0.13/cobol_analysis_db,public,dashboard_master,dashboard_master_dashboard_type_component_type_parameter_na_key,UNIQUE,"dashboard_type,component_type,parameter_name"
+172.16.0.13/cobol_analysis_db,public,document_master,2200_1308096_1_not_null,CHECK,document_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,document_master,2200_1308096_2_not_null,CHECK,document_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,document_master,2200_1308096_3_not_null,CHECK,section_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,document_master,2200_1308096_4_not_null,CHECK,parameter_name IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,document_master,document_master_pkey,PRIMARY KEY,document_id
+172.16.0.13/cobol_analysis_db,public,document_master,document_master_document_type_section_type_parameter_name_key,UNIQUE,"document_type,section_type,parameter_name"
+172.16.0.13/cobol_analysis_db,public,environment_master,2200_1308036_1_not_null,CHECK,environment_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,environment_master,2200_1308036_2_not_null,CHECK,category IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,environment_master,2200_1308036_4_not_null,CHECK,name IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,environment_master,environment_master_pkey,PRIMARY KEY,environment_id
+172.16.0.13/cobol_analysis_db,public,environment_master,environment_master_category_name_key,UNIQUE,"category,name"
+172.16.0.13/cobol_analysis_db,public,logs,2200_1307628_1_not_null,CHECK,id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,logs,logs_pkey,PRIMARY KEY,id
+172.16.0.13/cobol_analysis_db,public,metadata,2200_1307637_1_not_null,CHECK,id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,metadata,metadata_pkey,PRIMARY KEY,id
+172.16.0.13/cobol_analysis_db,public,single_analysis_master,2200_1308051_1_not_null,CHECK,analysis_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,single_analysis_master,2200_1308051_2_not_null,CHECK,analysis_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,single_analysis_master,2200_1308051_3_not_null,CHECK,process_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,single_analysis_master,2200_1308051_4_not_null,CHECK,parameter_name IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,single_analysis_master,2200_1308051_6_not_null,CHECK,data_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,single_analysis_master,single_analysis_master_pkey,PRIMARY KEY,analysis_id
+172.16.0.13/cobol_analysis_db,public,single_analysis_master,single_analysis_master_analysis_type_process_type_parameter_key,UNIQUE,"analysis_type,process_type,parameter_name"
+172.16.0.13/cobol_analysis_db,public,summary_analysis_master,2200_1308066_1_not_null,CHECK,summary_id IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,summary_analysis_master,2200_1308066_2_not_null,CHECK,analysis_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,summary_analysis_master,2200_1308066_3_not_null,CHECK,process_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,summary_analysis_master,2200_1308066_4_not_null,CHECK,parameter_name IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,summary_analysis_master,2200_1308066_6_not_null,CHECK,data_type IS NOT NULL
+172.16.0.13/cobol_analysis_db,public,summary_analysis_master,summary_analysis_master_pkey,PRIMARY KEY,summary_id
+172.16.0.13/cobol_analysis_db,public,summary_analysis_master,summary_analysis_master_analysis_type_process_type_paramete_key,UNIQUE,"analysis_type,process_type,parameter_name"

@@ -1,3 +1,5 @@
+# /home/administrator/cobol-analyzer/src/cobol_analyzer/analysis/detailed/implementation.py
+
 from typing import Dict, List, Any, Optional
 from dataclasses import dataclass
 from enum import Enum

@@ -1,4 +1,5 @@
-```python
+# /home/administrator/cobol-analyzer/src/parser/components.py
+
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Dict, List, Optional, Union, Any
@@ -316,4 +317,3 @@ class COBOLASTGenerator:
     def _generate_procedure_ast(self, division: ProcedureDivision) -> Dict[str, Any]:
         """PROCEDURE DIVISIONのAST生成"""
         pass
-```
