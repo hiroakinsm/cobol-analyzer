@@ -1,0 +1,77 @@
+開発対象サーバー
+
+◆アプリケーションサーバー
+172.16.0.27
+user : administrator
+password : Kanami1001!
+
+目的：Rustによるアプリケーションロジックの実装
+
+◆パーサーサーバー
+172.16.0.23
+user : administrator
+password : Kanami1001!
+
+目的：Rustによるパーサーマネージャーおよびパーサーの実装
+
+◆Webサーバー
+172.16.0.25
+user : administrator
+password : Kanami1001!
+
+目的：Vueによるフロントエンドの実装
+
+◆AI/RAG/MLサーバー
+172.16.0.19
+user : administrator
+password : Kanami1001!
+
+目的：
+・Llama3.1 8B-Instruct（4bit量子圧縮）を用いて、解析結果を補完すると共に解析結果に対するコメントを得る
+・Sentence Transformerを用いて、解析結果を補完する
+・RAGやAIの追加学習に必要な機械学習を実装し運用する
+・RAGにおいて、インターネット接続は可とする
+
+◆SQLデータベースサーバー（PostgreSQL 16）
+172.16.0.13
+db_name : cobol_analysis_db
+db_usr : cobana_admin
+password : Kanami1001!
+
+・テーブル情報
+logs : 別ソリューションで使用、ログを格納【これについては必要があれば読み込みのみとし、既存テーブルへの書き込みは禁止とする、なお同一目的で別テーブルを作成し運用すること】
+metadata : 別ソリューションで使用、メタデータを格納【これについては必要があれば読み込みのみとし、既存テーブルへの書き込みは禁止とする、なお同一目的で別テーブルを作成し運用すること】
+
+*開発で必要となるテーブルは追加作成するものとする
+
+◆NoSQLデータベースサーバー（MongoDB）
+172.16.0.17
+user : administrator
+password : Kanami1001!
+
+user : administrator
+db : cobol_ast_db
+
+・collection情報
+ast_collection : 別ソリューションで使用、対象ソース毎にASTを格納【これについては必要があれば読み込みのみ、同一目的で別コレクションを作成し運用すること】
+source_info : 別ソリューションで使用、対象ソース毎にメタデータを格納【これについては必要があれば読み込みのみ、同一目的で別コレクションを作成し運用すること】
+
+*開発で必要となるコレクションは追加作成するものとする
+
+◆ベクトルデータベースサーバー（Milvus）
+172.16.0.15
+user : administrator
+password : Kanami1001!
+
+目的：RAGとAIとの連携、それぞれの記録に用いる
+
+◆バックアップサーバー（Windows 10 IoT）
+192.168.101.8
+user : administrator
+password : DXpress2022
+
+共有フォルダ名：backup
+
+目的：各種バックアップの保存先
+
+
